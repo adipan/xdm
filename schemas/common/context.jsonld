@@ -31,7 +31,7 @@
     "iptc4xmpExt": "http://iptc.org/std/Iptc4xmpExt/1.1/",
     "dcx": "http://ns.adobe.com/dcx/",
     "search" : "https://ns.adobe.com/search",
-    "adbcollab" : "https://ns.adobe.com/annotation",
-    "adbprincipal": "https://ns.adobe.com/principal"
+    "adbcollab" : "https://ns.adobe.com/adbcollab",
+    "adbprincipal": "https://ns.adobe.com/adbprincipal"
   }
 }
