@@ -14,10 +14,6 @@
   "definitions": {
     "principalprofile": {
       "properties": {
-        "xdm:provider": {
-          "description": "The identity provider that manages this principal.",
-          "$ref": "https://ns.adobe.com/xdm/common/identity-provider"
-        },
         "id": {
           "type": "string",
           "description": "Principal id identifies a user account"
