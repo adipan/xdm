@@ -14,11 +14,11 @@
   "definitions": {
     "principalprofile": {
       "properties": {
-        "id": {
+        "xdm:id": {
           "type": "string",
           "description": "Principal id identifies a user account"
         },
-        "type": {
+        "xdm:type": {
           "type": "string",
           "format": "uri",
           "description":
@@ -56,7 +56,7 @@
       "$ref": "#/definitions/principalprofile"
     }
   ],
-  "required" : ["id", "type", "xdm:name"],
+  "required" : ["xdm:id", "xdm:type", "xdm:name"],
   "xdm:version": "1",
   "meta:status": "experimental"
 }

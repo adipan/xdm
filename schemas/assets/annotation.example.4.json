@@ -8,20 +8,20 @@
   "repo:name": "5d11c169-4870-4bb4-9dfa-bcf9655b6dc1",
   "repo:etag": "\"9758bd1a0eb067d716e26f6405dc24c5\"",
   "dc:format": "application/vnd.adobe.annotation+json",
-  "adbcollab:target": {
-    "adbcollab:source":"https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
-    "adbcollab:selector": {
-      "adbcollab:type":"highlight",
-      "adbcollab:primarySelector": [{
-        "adbcollab:type" : "NodeSelector",
+  "collab:target": {
+    "collab:source":"https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+    "collab:selector": {
+      "collab:type":"highlight",
+      "collab:primarySelector": [{
+        "collab:type" : "NodeSelector",
         "xdm:index":0,
-        "adbcollab:boundingBox":[
+        "collab:boundingBox":[
           36.1028,
           973.0618,
           213.1227,
           991.1132
         ],
-        "adbcollab:quadPoints":[
+        "collab:quadPoints":[
           36.1028,
           991.1132,
           213.1227,
@@ -32,29 +32,29 @@
           973.0618
         ]
       }],
-      "adbcollab:refinedBy": {
-        "adbcollab:type" : "PositionSelector",
-        "adbcollab:startOffset":20,
-        "adbcollab:endOffset": 50,
-        "adbcollab:startStructElem":"3b21c178-4870-4bb4-9dfa-dea9655b5ec5"
+      "collab:refinedBy": {
+        "collab:type" : "PositionSelector",
+        "collab:startOffset":20,
+        "collab:endOffset": 50,
+        "collab:startStructElem":"3b21c178-4870-4bb4-9dfa-dea9655b5ec5"
       }
     },
-    "adbcollab:annotationStyle": {
-      "adbcollab:strokeColor": "#FCCB00",
-      "adbcollab:strokeWidth": 3,
-      "adbcollab:opacity": 0.4
+    "collab:annotationStyle": {
+      "collab:strokeColor": "#FCCB00",
+      "collab:strokeWidth": 3,
+      "collab:opacity": 0.4
     }
   },
-  "xdm:status": "open",
-  "adbcollab:motivation": "commenting",
-  "adbcollab:body" : {
+  "collab:status": "open",
+  "collab:motivation": "commenting",
+  "collab:body" : {
       "dc:format": "text/plain",
       "value": "plain text comment content",
-      "adbcollab:read": true
+      "collab:read": true
   },
-  "adbcollab:creator": {
-    "id": "C0B648DE57D701277F000101@AdobeID",
-    "type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+  "collab:creator": {
+    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
     "xdm:name":"Neeraj bagga",
     "adbprincipal:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
   },
