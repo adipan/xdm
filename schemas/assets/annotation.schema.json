@@ -278,7 +278,7 @@
       "description": "An annotation may refer to segment of a target resource, rather than all of it. A selector is used to describe that segment in the target resource.",
       "type": "object",
       "properties": {
-        "type" : {
+        "xdm:type" : {
           "type": "string",
           "const": "AdobeAnnotationStyle"
         },
