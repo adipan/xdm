@@ -29,19 +29,19 @@
           "type": "string",
           "description": "Display name"
         },
-        "adbprincipal:profileImage": {
+        "collab:profileImage": {
           "title": "Image",
           "format": "uri",
           "type": "string",
           "description": "Profile avatar/picture of the person"
         },
-        "adbprincipal:profileLink": {
+        "collab:profileLink": {
           "title": "Image",
           "format": "uri",
           "type": "string",
           "description": "Link to the public profile of the person. An example of the same is Adobe Behance public profile."
         },
-        "adbprincipal:anonymous": {
+        "collab:anonymous": {
           "title": "Guest or anonymous user",
           "type": "boolean",
           "meta:usereditable": false,
