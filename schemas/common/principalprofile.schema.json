@@ -56,7 +56,7 @@
       "$ref": "#/definitions/principalprofile"
     }
   ],
-  "required" : ["xdm:id", "xdm:type", "xdm:name"],
+  "required" : ["xdm:id", "xdm:type"],
   "xdm:version": "1",
   "meta:status": "experimental"
 }
