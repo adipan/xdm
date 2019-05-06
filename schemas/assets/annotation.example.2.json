@@ -1,13 +1,4 @@
 {
-  "repo:id": "urn:aaid:cs:5d11c169-4870-4bb4-9dfa-bcf9655b6dc2",
-  "repo:createDate": "2017-09-26T15:52:25+00:00",
-  "repo:modifyDate": "2017-09-26T15:52:25+00:00",
-  "repo:version": "1",
-  "repo:size": 1024,
-  "repo:path": "/users/joe/Project 1/logo.png:annotation/5d11c169-4870-4bb4-9dfa-bcf9655b6dc2",
-  "repo:name": "5d11c169-4870-4bb4-9dfa-bcf9655b6dc2",
-  "repo:etag": "\"9758bd1a0eb067d716e26f6405dc24c6\"",
-  "dc:format": "application/vnd.adobe.annotation+json",
   "collab:generator": "https://platform-cs.adobe.io/annots",
   "collab:target": {
     "collab:source":"https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
@@ -15,7 +6,7 @@
       "collab:type":"strikeout",
       "collab:primarySelector": [{
         "collab:type" : "NodeSelector",
-        "xdm:index":0,
+        "collab:index":0,
         "collab:boundingBox": [17.97, 405.95, 539.87, 431.15],
         "collab:quadPoints": [18.47, 430.65, 539.37, 430.65, 18.47, 418.4, 539.37, 418.4, 18.48, 418.69, 62.71, 418.69, 18.48, 406.45, 62.71, 406.45]
       }]
@@ -32,11 +23,9 @@
       "value": "I striked through this content as it looks wrong to me. Let's delete it."
   },
   "collab:creator": {
-    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
-    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
-    "xdm:name":"Neeraj bagga",
+    "collab:id": "C0B648DE57D701277F000101@AdobeID",
+    "collab:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "collab:name":"Neeraj bagga",
     "collab:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
-  },
-  "dc:title": "Annotation",
-  "type":"object"
+  }
 }

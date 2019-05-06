@@ -13,8 +13,7 @@
   "meta:extends": [
     "http://ns.adobe.com/adobecloud/core/1.0#/definitions/common-properties",
     "http://ns.adobe.com/adobecloud/core/1.0#/definitions/date-properties",
-    "https://ns.adobe.com/xdm/external/hal/resource#/definitions/hal",
-    "http://ns.adobe.com/adobecloud/core/1.0/asset"
+    "https://ns.adobe.com/xdm/external/hal/resource#/definitions/hal"
   ],
   "description": "Annotation class for a contextual or global annotation asset added by a user over a target resource.\nAnnotation data model is based on W3C Web annotations data model (https://www.w3.org/TR/annotation-model/).",
   "definitions": {
@@ -50,7 +49,7 @@
         },
         "collab:creator": {
           "title": "Creator",
-          "required" : ["xdm:id", "xdm:type", "xdm:name"],
+          "required" : ["collab:id", "collab:type", "collab:name"],
           "$ref": "https://ns.adobe.com/xdm/common/principalprofile",
           "description": "Profile details of person who created this annotation. When a client app makes an annotation creation request, it need not fill the creator property since the service would fill it up based on the Authorisation request header."
         },
@@ -122,24 +121,24 @@
         "oneOf": [
           {
             "properties": {
-              "xdm:index": {
+              "collab:index": {
                 "title": "Index",
                 "type": "integer",
                 "description": "When present, indicates the item at this array index should be selected. For page oriented formats, the node object contains a single property named index, and the value of the index property is the zero-based index of a page in the asset",
                 "minimum": 0
               }
             },
-            "required": ["collab:type", "xdm:index"]
+            "required": ["collab:type", "collab:index"]
           },
           {
             "properties": {
-              "xdm:id": {
+              "collab:id": {
                 "title": "ID",
                 "type": "string",
                 "description": "When present, indicates the item with this id value should be selected. For non-page oriented formats, the node object contains a single property named id, and the value of the id property is the id of the target artboard."
               }
             },
-            "required": ["collab:type", "xdm:id"]
+            "required": ["collab:type", "collab:id"]
           }
         ],
         "properties": {
@@ -278,7 +277,7 @@
       "description": "An annotation may refer to segment of a target resource, rather than all of it. A selector is used to describe that segment in the target resource.",
       "type": "object",
       "properties": {
-        "xdm:type" : {
+        "collab:type" : {
           "type": "string",
           "const": "AdobeAnnotationStyle"
         },
@@ -342,15 +341,6 @@
     }
   ],
   "required": [
-    "repo:name",
-    "repo:path",
-    "dc:format",
-    "repo:createDate",
-    "repo:modifyDate",
-    "repo:id",
-    "repo:etag",
-    "repo:version",
-    "repo:size",
     "collab:body",
     "collab:target"
   ],

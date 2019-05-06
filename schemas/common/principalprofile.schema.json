@@ -14,17 +14,17 @@
   "definitions": {
     "principalprofile": {
       "properties": {
-        "xdm:id": {
+        "collab:id": {
           "type": "string",
           "description": "Principal id identifies a user account"
         },
-        "xdm:type": {
+        "collab:type": {
           "type": "string",
           "format": "uri",
           "description":
             "The type of the principal. Acts as a processing hint to the client. Ideally, each value should be identified as a [URI](https://tools.ietf.org/html/rfc3986)."
         },        
-        "xdm:name": {
+        "collab:name": {
           "title": "Name",
           "type": "string",
           "description": "Display name"
@@ -56,7 +56,7 @@
       "$ref": "#/definitions/principalprofile"
     }
   ],
-  "required" : ["xdm:id", "xdm:type"],
+  "required" : ["collab:id", "collab:type"],
   "xdm:version": "1",
   "meta:status": "experimental"
 }
