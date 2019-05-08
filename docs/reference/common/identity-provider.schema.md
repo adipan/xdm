@@ -14,7 +14,7 @@ An identity provider (abbreviated IdP) is a system entity that creates, maintain
 ## Identity Provider Example
 ```json
 {
-  "@id": "https://ims-na1.adobelogin.com/"
+  "@id": "https://ns.adobe.com/adobecloudplatform/ims"
 }
 ```
 

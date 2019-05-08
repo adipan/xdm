@@ -33,7 +33,7 @@
     "meta:status": "experimental",
     "examples": [
         {
-            "@id": "https://ims-na1.adobelogin.com/"
+            "@id": "https://ns.adobe.com/adobecloudplatform/ims"
         }
     ]
 }

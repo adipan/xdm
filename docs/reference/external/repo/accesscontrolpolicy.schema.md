@@ -30,10 +30,10 @@ Schema for the Access Control Policy of a resource
     {
       "repo:principal": {
         "xdm:provider": {
-          "@id": "https://ims-na1.adobelogin.com/"
+          "@id": "https://ns.adobe.com/adobecloudplatform/ims"
         },
-        "@id": "C0B648DE57D701277F000101@AdobeID",
-        "@type": "https://ns.adobe.com/adobecloudplatform/ims/user"
+        "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+        "xdm:type": "https://ns.adobe.com/xdm/common/user"
       },
       "repo:privileges": [
         "write",
