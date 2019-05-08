@@ -49,8 +49,8 @@
         },
         "collab:creator": {
           "title": "Creator",
-          "required" : ["collab:id", "collab:type", "collab:name"],
-          "$ref": "https://ns.adobe.com/xdm/common/principalprofile",
+          "required" : ["xdm:identityProvider", "xdm:id", "xdm:type", "xdm:displayName"],
+          "$ref": "https://ns.adobe.com/adobecloudplatform/ims/user",
           "description": "Profile details of person who created this annotation. When a client app makes an annotation creation request, it need not fill the creator property since the service would fill it up based on the Authorisation request header."
         },
         "collab:body" : {
@@ -333,9 +333,6 @@
     }
   },
   "allOf": [
-    {
-      "$ref": "http://ns.adobe.com/adobecloud/core/1.0/asset#/definitions/asset"
-    },
     {
       "$ref": "#/definitions/annotation"
     }
