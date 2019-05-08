@@ -10,11 +10,6 @@
   "title": "Annotation",
   "type": "object",
   "meta:extensible": true,
-  "meta:extends": [
-    "http://ns.adobe.com/adobecloud/core/1.0#/definitions/common-properties",
-    "http://ns.adobe.com/adobecloud/core/1.0#/definitions/date-properties",
-    "https://ns.adobe.com/xdm/external/hal/resource#/definitions/hal"
-  ],
   "description": "Annotation class for a contextual or global annotation asset added by a user over a target resource.\nAnnotation data model is based on W3C Web annotations data model (https://www.w3.org/TR/annotation-model/).",
   "definitions": {
     "annotation": {
