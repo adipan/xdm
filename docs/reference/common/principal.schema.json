@@ -10,27 +10,34 @@
     "title": "Principal",
     "description": "This model represents a principal in an access control system. Principals are entities that have been authenticated against an identity provider.",
     "type": "object",
-    "meta:extensible": false,
-    "properties": {
-        "xdm:provider": {
-            "description": "The identity provider that manages this principal.",
-            "$ref": "https://ns.adobe.com/xdm/common/identity-provider"
+    "meta:extensible": true,
+    "definitions": {
+      "principal": {
+        "xdm:identityProvider": {
+          "description": "The identity provider that manages this principal.",
+          "type": "string",
+          "format": "uri",
+          "meta:enum": ["https://ns.adobe.com/adobecloudplatform/ims"]
         },
-        "@id": {
-            "type": "string",
-            "description": "A unique (uniqueness is defined on the same lines as defined [here](https://tools.ietf.org/html/rfc8141#section-5)) and persistent identifier for the principal. Ideally, this identifier should be a [URI](https://tools.ietf.org/html/rfc3986)."
+        "xdm:id": {
+          "type": "string",
+          "description":
+            "A unique (uniqueness is defined on the same lines as defined [here](https://tools.ietf.org/html/rfc8141#section-5)) and persistent identifier for the principal. Ideally, this identifier should be a [URI](https://tools.ietf.org/html/rfc3986)."
         },
-        "@type": {
-            "type": "string",
-            "format": "uri",
-            "description": "The type of the principal. Acts as a processing hint to the client. Ideally, each value should be identified as a [URI](https://tools.ietf.org/html/rfc3986)."
+        "xdm:type": {
+          "type": "string",
+          "format": "uri",
+          "description":
+            "The type of the principal. Acts as a processing hint to the client. Ideally, each value should be identified as a [URI](https://tools.ietf.org/html/rfc3986)."
         }
+      }
     },
-    "required": [
-        "xdm:provider",
-        "@id",
-        "@type"
+    "allOf": [
+      {
+        "$ref": "#/definitions/principal"
+      }
     ],
+    "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
     "meta:status": "experimental",
     "examples": [
         {
