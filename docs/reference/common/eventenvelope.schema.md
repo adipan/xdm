@@ -26,6 +26,7 @@ An `EventEnvelope` is a type of `Activity` (in the sense of [W3C Activity Stream
   "activitystreams:published": "2016-07-16T19:20:30+01:00",
   "@id": "https://events.adobe.io/event/id/82235bac-2b81-4e70-90b5-2bd1f04b5c7b",
   "activitystreams:to": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:type": "https://ns.adobe.com/xdm/common/user",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID"
   },
@@ -34,6 +35,7 @@ An `EventEnvelope` is a type of `Activity` (in the sense of [W3C Activity Stream
     "xdm:root": "https://cc-api-storage-stage.adobe.io/"
   },
   "activitystreams:actor": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:type": "https://ns.adobe.com/xdm/common/user",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID"
   },
@@ -86,6 +88,7 @@ An `EventEnvelope` is a type of `Activity` (in the sense of [W3C Activity Stream
   "activitystreams:published": "2016-07-16T19:20:30+01:00",
   "@id": "https://events.adobe.io/event/id/82235bac-2b81-4e70-90b5-2bd1f04b5c7b",
   "activitystreams:to": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:type": "https://ns.adobe.com/xdm/common/user",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID"
   },
@@ -94,6 +97,7 @@ An `EventEnvelope` is a type of `Activity` (in the sense of [W3C Activity Stream
     "xdm:root": "https://cc-api-storage-stage.adobe.io/"
   },
   "activitystreams:actor": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:type": "https://ns.adobe.com/xdm/common/user",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID"
   },

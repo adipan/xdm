@@ -26,9 +26,7 @@ Schema for the Access Control Entry for the Access Control List of a resource
 ```json
 {
   "repo:principal": {
-    "xdm:provider": {
-      "@id": "https://ns.adobe.com/adobecloudplatform/ims"
-    },
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:id": "C0B648DE57D701277F000101@AdobeID",
     "xdm:type": "https://ns.adobe.com/xdm/common/user"
   },

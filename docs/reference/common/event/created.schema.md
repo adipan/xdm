@@ -23,6 +23,7 @@ A `created event` follows semantics that are exactly equivalent to the semantics
   "@type": "https://ns.adobe.com/xdm/common/event/created",
   "xdm:objectType": "http://ns.adobe.com/adobecloud/core/1.0/asset",
   "activitystreams:actor": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID",
     "xdm:type": "https://ns.adobe.com/xdm/common/user"
   },
@@ -40,6 +41,7 @@ A `created event` follows semantics that are exactly equivalent to the semantics
   },
   "activitystreams:published": "2016-07-16T19:20:30+01:00",
   "activitystreams:to": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID",
     "xdm:type": "https://ns.adobe.com/xdm/common/user"
   }
