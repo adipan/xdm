@@ -40,8 +40,7 @@
   "collab:motivation": "commenting",
   "collab:body" : {
       "dc:format": "text/plain",
-      "value": "plain text comment content",
-      "collab:read": true
+      "value": "plain text comment content"
   },
   "collab:creator": {
     "xdm:identityProvider": "ims",

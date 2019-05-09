@@ -39,13 +39,11 @@
           "title": "Generator",
           "type": "string",
           "meta:usereditable": false,
-          "default": "https://platform-cs.adobe.io/annots",
+          "default": "https://ns.adobe.com/adobecloudplatform/annots",
           "description": "The service that created the annotation"
         },
         "collab:creator": {
           "title": "Creator",
-          "required" : ["xdm:identityProvider", "xdm:id", "xdm:type", "xdm:displayName"],
-          "$ref": "https://ns.adobe.com/adobecloudplatform/ims/user",
           "description": "Profile details of person who created this annotation. When a client app makes an annotation creation request, it need not fill the creator property since the service would fill it up based on the Authorisation request header."
         },
         "collab:body" : {
@@ -77,11 +75,6 @@
           "title": "Format",
           "description": "media type. Currently, only text/plain is supported. In future, other types like text/markdown may be supported. Due to which, this field is not const",
           "meta:enum": ["text/plain"]
-        },
-        "collab:read": {
-          "type": "boolean",
-          "title": "Read",
-          "description": "This field represents if the current annotation been read by current user. It's default is false if the current user is not same as the annotation creator. It's default is true if the current user is same as annotation creator. This field is only present in payload if it is different than the default."
         }
       }
     },    
@@ -96,7 +89,7 @@
     },
     "quadilateralPoints": {
       "title": "Quadilateral points",
-      "description": "Quadilateral points may be provided for highlights, strikethrough, underline, insert or replace annotations where the text location in the asset is fixed and need not be recomputed at rendering time. The quadPoints make a lot of sense for page oriented formats, since they have fixed layout unless a PDF document is being read on a mobile form factor in dynamic layout. quadPoints must be a multiple of 8. Each successive pair of numbers represent an x,y location for a 'point' in a quadilateral. After successive 8 numbers, the next quadilateral starts. For many Adobe products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently.",
+      "description": "Quadilateral points may be provided for highlights, strikethrough, underline, insert or replace annotations where the text location in the asset is fixed and need not be recomputed at rendering time. The quadPoints make a lot of sense for page oriented formats, since they have fixed layout unless such a document is being read on a mobile form factor in dynamic layout. quadPoints must be a multiple of 8. Each successive pair of numbers represent an x,y location for a 'point' in a quadilateral. After successive 8 numbers, the next quadilateral starts. For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently.",
       "type": "array",
       "minItems": 8,
       "items": {
@@ -105,7 +98,7 @@
       },
       "examples": [[18.47, 430.65, 539.37, 430.65, 18.47, 418.4, 539.37, 418.4, 18.48, 418.69, 62.71, 418.69, 18.48, 406.45, 62.71, 406.45]]
     },
-    "adobeNodeSelector": {
+    "nodeSelector": {
       "type": "array",
       "title": "Node selector",
       "description": "If the annotation points to a single node in the target asset, or spans across multiple nodes over the target resource/asset, then this field is used.",
@@ -148,7 +141,7 @@
           },
           "collab:boundingBox": {
             "title": "Bounding box",
-            "description": "Bounding box of the location in the 'node' (target.selector.node) of the asset (target.source) where annotation on the target resource is made. For many Adobe products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. ",
+            "description": "Bounding box of the location in the 'node' (target.selector.node) of the asset (target.source) where annotation on the target resource is made. For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. ",
             "type": "array",
             "minItems": 4,
             "maxItems": 4,
@@ -159,12 +152,12 @@
           },
           "collab:noteX": {
             "title": "X point of the location where annotation on the target resource is made",
-            "description": "For many Adobe products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. The caller may optionally supply values for noteX and noteY if target.selector.subtype is equal to node.  For other subtypes, noteX and noteY must be specified.",
+            "description": "For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. The caller may optionally supply values for noteX and noteY if target.selector.subtype is equal to node.  For other subtypes, noteX and noteY must be specified.",
             "type": "number"
           },
           "collab:noteY": {
             "title": "X point of the location where annotation on the target resource is made",
-            "description": "For many Adobe products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. The caller may optionally supply values for noteX and noteY if target.selector.subtype is equal to node.  For other subtypes, noteX and noteY must be specified.",
+            "description": "For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. The caller may optionally supply values for noteX and noteY if target.selector.subtype is equal to node.  For other subtypes, noteX and noteY must be specified.",
             "type": "number"
           },
           "collab:inkList": {
@@ -179,7 +172,7 @@
         }
       }
     },
-    "adobePositionSelector": {
+    "positionSelector": {
       "title": "Position Selector",
       "description": "This selector helps in selecting a text position range or percentage offset in an image",
       "oneOf": [
@@ -236,10 +229,10 @@
       "description": "An annotation target may be selected by any choice of selector implementation",
       "oneOf": [
         {
-          "$ref": "#/definitions/adobeNodeSelector"
+          "$ref": "#/definitions/nodeSelector"
         },
         {
-          "$ref": "#/definitions/adobePositionSelector"
+          "$ref": "#/definitions/positionSelector"
         }        
       ]
     },
@@ -257,12 +250,12 @@
         },
         "collab:primarySelector": {
           "title": "Primary Selector",
-          "description": "annotationSelector does not extend annotationSelectorChooser but composes via primarySelector. This helps if the actual selection requires a collection of selections, possible in adobeNodeSelector.",
+          "description": "annotationSelector does not extend annotationSelectorChooser but composes via primarySelector. This helps if the actual selection requires a collection of selections, possible in nodeSelector.",
           "$ref" : "#/definitions/annotationSelectorChooser"
         },
         "collab:refinedBy": {
           "title": "Refined By",
-          "description": "An annotation may be defined for multiple representations or a specific context of the asset. Example 1: In case of PDF, an annotation may be present at a specific location in a page, or across two pages. A PDF could be rendered/reflowed by relayouting on a smaller form factor (mobile) device. To enable this feature, annotation may need to be represented via text positions and an anchor element/id. Example 2: In case of a creative product, an annotation may be present on an overlay artboard when it is superimposed on top of a base artboard. So, the annotation may need both collab:primarySelector and collab:refinedBy to represent it. collab:refinedBy is only present if collab:primarySelector is present.",
+          "description": "An annotation may be defined for multiple representations or a specific context of the asset. Example 1: In case of page-oriented format, an annotation may be present at a specific location in a page, or across two pages. A page-oriented format could be rendered/reflowed by relayouting on a smaller form factor (mobile) device. To enable this feature, annotation may need to be represented via text positions and an anchor element/id. Example 2: In case of a creative product, an annotation may be present on an overlay artboard when it is superimposed on top of a base artboard. So, the annotation may need both collab:primarySelector and collab:refinedBy to represent it. collab:refinedBy is only present if collab:primarySelector is present.",
           "$ref" : "#/definitions/annotationSelectorChooser"
         }
       }
@@ -274,7 +267,7 @@
       "properties": {
         "collab:type" : {
           "type": "string",
-          "const": "AdobeAnnotationStyle"
+          "const": "AnnotationStyle"
         },
         "collab:strokeColor": {
           "title": "Stroke color",
