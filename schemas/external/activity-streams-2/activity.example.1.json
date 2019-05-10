@@ -7,6 +7,7 @@
   "@type": "https://ns.adobe.com/xdm/common/event/created",
   "activitystreams:published": "2016-07-16T19:20:30+01:00",
   "activitystreams:to": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID",
     "xdm:type": "https://ns.adobe.com/xdm/common/user"
   },
@@ -15,6 +16,7 @@
     "@type": "https://ns.adobe.com/xdm/content/repository"
   },
   "activitystreams:actor": {
+    "xdm:identityProvider": "https://ns.adobe.com/adobecloudplatform/ims",
     "xdm:id": "D13A1E7053E46A220A4C86E1@AdobeID",
     "xdm:type": "https://ns.adobe.com/xdm/common/user"
   },
