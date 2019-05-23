@@ -1,5 +1,10 @@
 {
-    "meta:license": ["Copyright 2019 Adobe Systems Incorporated. All rights reserved.", "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license", "you may not use this file except in compliance with the License. You may obtain a copy", "of the License at https://creativecommons.org/licenses/by/4.0/"],
+    "meta:license": [
+    "Copyright 2019 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+  ],
     "$schema": "http://json-schema.org/draft-06/schema#",
     "$id": "https://ns.adobe.com/xdm/assets/usertask",
     "title": "User Task",
@@ -41,7 +46,14 @@
                 "collab:status": {
                     "type": "string",
                     "description": "Status of the Task",
-                    "meta:enum": ["not_started", "in_progress", "done"]
+                    "meta:enum": ["not_started", "in_progress", "done"],
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored",
+                        "search:sort": "sortedCaseSensitive"
+                    }]
                 },
                 "collab:priority": {
                     "type": "string",
@@ -51,7 +63,13 @@
                 "collab:dueDate": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "The date and time in which the task has to be completed."
+                    "description": "The date and time in which the task has to be completed.",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:store": "stored",
+                        "search:sort": "sorted"
+                    }]
                 },
                 "collab:percentComplete": {
                     "title": "Percent complete",
@@ -72,16 +90,22 @@
             }
         },
         "resource": {
-            "required": ["collab:source", "collab:subType"],
+            "required": ["collab:source", "collab:subtype"],
             "properties": {
                 "collab:source": {
                     "title": "Source",
                     "description": "This field represents the id-based URI for a platform resource that is referenced by a task.",
                     "type": "string",
                     "format": "uri",
-                    "examples": ["https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2"]
+                    "examples": ["https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2"],
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored"
+                    }]
                 },
-                "collab:subType": {
+                "collab:subtype": {
                     "title": "Sub Type",
                     "type": "string",
                     "meta:enum": ["attachment", "reference"],
@@ -101,11 +125,37 @@
                 "collab:creator": {
                     "title": "Creator",
                     "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+                    "properties": {
+                        "xdm:id": {
+                            "title": "Creator ID",
+                            "description": "This field is same as xdm:id, merely redefined to allow search annotation on this field",
+                            "meta:descriptors": [{
+                                "@type": "xdm:searchdescriptor",
+                                "search:indexed": true,
+                                "search:filterable": true,
+                                "search:store": "stored",
+                                "search:sort": "sorted"
+                            }]
+                        }
+                    },
                     "description": "Profile details of person who created this task."
                 },
                 "collab:assignee": {
                     "title": "Assignee",
                     "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+                    "properties": {
+                        "xdm:id": {
+                            "title": "Assignee ID",
+                            "description": "This field is same as xdm:id, merely redefined to allow search annotation on this field",
+                            "meta:descriptors": [{
+                                "@type": "xdm:searchdescriptor",
+                                "search:indexed": true,
+                                "search:filterable": true,
+                                "search:store": "stored",
+                                "search:sort": "sorted"
+                            }]
+                        }
+                    },                    
                     "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
                 },
                 "collab:reminderDates": {

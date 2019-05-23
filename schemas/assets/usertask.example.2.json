@@ -28,7 +28,7 @@
   "collab:resources": [
     {
       "collab:source": "https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
-      "collab:subType": "reference",
+      "collab:subtype": "reference",
       "collab:immutable": true
     }
   ]
