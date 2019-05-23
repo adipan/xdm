@@ -24,7 +24,11 @@
                             "type": "string",
                             "maxLength": 5000,
                             "title": "Body value",
-                            "description": "The content/description of this collaboration entity"
+                            "description": "The content/description of this collaboration entity",
+                            "meta:descriptors": [{
+                                "@type": "xdm:searchdescriptor",
+                                "search:indexed": true
+                            }]
                         },
                         "dc:format": {
                             "type": "string",
