@@ -131,44 +131,35 @@
                 }
             }
         },
+        "collabentityuser": {
+            "title": "Collaboration entity user",
+            "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+            "properties": {
+                "xdm:id": {
+                    "title": "XDM ID",
+                    "description": "This field is merely redefined to allow search annotation on this field",
+                    "type": "string",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored",
+                        "search:sort": "sorted"
+                    }]
+                }
+            },
+            "description": "Profile details of person who created or was assigned this collaboration entity."
+        },
         "usertask": {
             "properties": {
                 "collab:creator": {
                     "title": "Creator",
-                    "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
-                    "properties": {
-                        "xdm:id": {
-                            "title": "Creator ID",
-                            "description": "This field is merely redefined to allow search annotation on this field",
-                            "type": "string",
-                            "meta:descriptors": [{
-                                "@type": "xdm:searchdescriptor",
-                                "search:indexed": true,
-                                "search:filterable": true,
-                                "search:store": "stored",
-                                "search:sort": "sorted"
-                            }]
-                        }
-                    },
+                    "$ref": "#/definitions/collabentityuser",
                     "description": "Profile details of person who created this task."
                 },
                 "collab:assignee": {
                     "title": "Assignee",
-                    "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
-                    "properties": {
-                        "xdm:id": {
-                            "title": "Assignee ID",
-                            "description": "This field is merely redefined to allow search annotation on this field",
-                            "type": "string",
-                            "meta:descriptors": [{
-                                "@type": "xdm:searchdescriptor",
-                                "search:indexed": true,
-                                "search:filterable": true,
-                                "search:store": "stored",
-                                "search:sort": "sorted"
-                            }]
-                        }
-                    },                    
+                    "$ref": "#/definitions/collabentityuser",
                     "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
                 },
                 "collab:reminderDates": {
