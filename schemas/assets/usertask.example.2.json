@@ -1,0 +1,35 @@
+{
+  "collab:body" : {
+    "dc:format": "text/plain",
+    "value": "please review the file and complete the task"
+  },
+
+  "collab:subtype": "review",
+  "collab:status": "in_progress",
+  "collab:priority": "high",
+  "collab:dueDate": "2019-12-28T13:01:33Z",
+  "collab:percentComplete": 0.5,
+  "collab:creator": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:name": "Neeraj bagga",
+    "collab:profileImage":
+      "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  },
+  "collab:assignee": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000102@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:name": "Amit Kumar....",
+    "collab:profileImage":
+      "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  },
+  "collab:resources": [
+    {
+      "collab:source": "https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+      "collab:subType": "reference",
+      "collab:immutable": true
+    }
+  ]
+}

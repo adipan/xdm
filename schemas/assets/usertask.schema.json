@@ -1,0 +1,138 @@
+{
+    "meta:license": ["Copyright 2019 Adobe Systems Incorporated. All rights reserved.", "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license", "you may not use this file except in compliance with the License. You may obtain a copy", "of the License at https://creativecommons.org/licenses/by/4.0/"],
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://ns.adobe.com/xdm/assets/usertask",
+    "title": "User Task",
+    "meta:extensible": true,
+    "description": "This model represents a user task.",
+    "type": "object",
+    "definitions": {
+        "collabbody": {
+            "properties": {
+                "collab:body": {
+                    "type": "object",
+                    "title": "Collaboration entity body",
+                    "description": "The content/description of this collaboration entity",
+                    "required": ["dc:format"],
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "maxLength": 5000,
+                            "title": "Body value",
+                            "description": "The content/description of this collaboration entity"
+                        },
+                        "dc:format": {
+                            "type": "string",
+                            "title": "Media type",
+                            "description": "The media type of the body.",
+                            "meta:enum": ["text/plain"]
+                        }
+                    }
+                }
+            }
+        },
+        "basetask": {
+            "properties": {
+                "collab:subtype": {
+                    "title": "SubType",
+                    "type": "string",
+                    "description": "Subtype of the task eg. review"
+                },
+                "collab:status": {
+                    "type": "string",
+                    "description": "Status of the Task",
+                    "meta:enum": ["not_started", "in_progress", "done"]
+                },
+                "collab:priority": {
+                    "type": "string",
+                    "description": "Priority of the Task",
+                    "meta:enum": ["high", "normal", "low"]
+                },
+                "collab:dueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time in which the task has to be completed."
+                },
+                "collab:percentComplete": {
+                    "title": "Percent complete",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Percentage of task completed."
+                },
+                "collab:resources": {
+                    "title": "Resources",
+                    "description": "resources defines an array of items each of which is referenced by this task.",
+                    "type": "array",
+                    "minItems": 0,
+                    "items": {
+                        "$ref": "#/definitions/resource"
+                    }
+                }
+            }
+        },
+        "resource": {
+            "required": ["collab:source", "collab:subType"],
+            "properties": {
+                "collab:source": {
+                    "title": "Source",
+                    "description": "This field represents the id-based URI for a platform resource that is referenced by a task.",
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2"]
+                },
+                "collab:subType": {
+                    "title": "Sub Type",
+                    "type": "string",
+                    "meta:enum": ["attachment", "reference"],
+                    "meta:usereditable": false,
+                    "description": "This field describes if the resource is attached to this task as an attachment or it is reference to another asset"
+                },
+                "collab:immutable": {
+                    "title": "Immutable",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "This field describes if the reference is immutable or can be changed during lifetime of a task."
+                }
+            }
+        },
+        "usertask": {
+            "properties": {
+                "collab:creator": {
+                    "title": "Creator",
+                    "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+                    "description": "Profile details of person who created this task."
+                },
+                "collab:assignee": {
+                    "title": "Assignee",
+                    "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+                    "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
+                },
+                "collab:reminderDates": {
+                    "type": "array",
+                    "title": "Reminder dates",
+                    "description": "Collection of reminder dates.",
+                    "items": {
+                        "properties": {
+                            "reminderDate": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "Date and time in which a notification will be sent to assignee to complete the task."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "allOf": [{
+        "$ref": "#/definitions/collabbody"
+    }, {
+        "$ref": "#/definitions/basetask"
+    }, {
+        "$ref": "#/definitions/usertask"
+    }],
+    "required": ["collab:creator"],
+    "xdm:version": "1",
+    "meta:status": "experimental"
+}

@@ -1,0 +1,27 @@
+{
+  "collab:body" : {
+    "dc:format": "text/plain",
+    "value": "please review the file and complete the task"
+  },
+  "collab:subtype": "review",
+  "collab:status": "in_progress",
+  "collab:priority": "high",
+  "collab:creator": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:name": "Neeraj bagga",
+    "collab:profileImage":
+      "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  },
+  "collab:assignee": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000102@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:name": "Amit Kumar....",
+    "collab:profileImage":
+      "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  },
+  "collab:dueDate": "2019-12-28T13:01:33Z",
+  "collab:reminderDates": ["2019-12-28T13:01:33Z"]
+}
