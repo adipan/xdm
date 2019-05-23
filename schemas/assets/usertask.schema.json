@@ -41,7 +41,14 @@
                 "collab:subtype": {
                     "title": "SubType",
                     "type": "string",
-                    "description": "Subtype of the task eg. review"
+                    "description": "Subtype of the task eg. review",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored",
+                        "search:sort": "sortedCaseSensitive"
+                    }]
                 },
                 "collab:status": {
                     "type": "string",
@@ -128,7 +135,8 @@
                     "properties": {
                         "xdm:id": {
                             "title": "Creator ID",
-                            "description": "This field is same as xdm:id, merely redefined to allow search annotation on this field",
+                            "description": "This field is merely redefined to allow search annotation on this field",
+                            "type": "string",
                             "meta:descriptors": [{
                                 "@type": "xdm:searchdescriptor",
                                 "search:indexed": true,
@@ -146,7 +154,8 @@
                     "properties": {
                         "xdm:id": {
                             "title": "Assignee ID",
-                            "description": "This field is same as xdm:id, merely redefined to allow search annotation on this field",
+                            "description": "This field is merely redefined to allow search annotation on this field",
+                            "type": "string",
                             "meta:descriptors": [{
                                 "@type": "xdm:searchdescriptor",
                                 "search:indexed": true,
