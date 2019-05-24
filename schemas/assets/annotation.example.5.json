@@ -20,7 +20,7 @@
   "collab:motivation": "commenting",
   "collab:body" : {
       "dc:format": "text/plain",
-      "value": "plain text comment content"
+      "value": "plain text comment content. Example of a pencil/shape annotation tool."
   },
   "collab:creator": {
     "xdm:identityProvider": "ims",

@@ -5,9 +5,9 @@
       "collab:type":"note",
       "collab:primarySelector": {
         "collab:type" : "PositionSelector",
-        "collab:leftOffset":20,
-        "collab:topOffset": 10,
-        "collab:startStructElem":"3b21c178-4870-4bb4-9dfa-dea9655b5ec5"
+        "collab:startOffset":20,
+        "collab:endOffset": 50,
+        "collab:startStructElem":"keyframe:3b21c178-4870-4bb4-9dfa-dea9655b5ec5"
       }
     }
   },
@@ -15,7 +15,8 @@
   "collab:motivation": "commenting",
   "collab:body" : {
       "dc:format": "text/plain",
-      "value": "plain text comment content. Example of a Sticky annotation tool."
+      "value": "Comment on a Video or Animation asset",
+      "collab:read": true
   },
   "collab:creator": {
     "xdm:identityProvider": "ims",
@@ -23,5 +24,6 @@
     "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
     "xdm:displayName":"Neeraj bagga",
     "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
-  }
+  },
+  "type":"object"
 }

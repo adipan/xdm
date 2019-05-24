@@ -81,15 +81,15 @@
     },    
     "pointArray": {
       "title": "Point array",
-      "description": "An array of points",
+      "description": "An array of points. It is a series of alternating horizontal and vertical coordinates in default user space, specifying points along the path. When drawn, the points shall be connected by straight lines or curves in an implementation-dependent way. This field is similar to InkList property in Table 182 in section 12.5.6.13 'Ink Annotations' in PDF standard ISO32000:2008.",
       "type": "array",
       "minItems": 2,
       "items" : {
         "type": "number"
       }
     },
-    "quadilateralPoints": {
-      "title": "Quadilateral points",
+    "quadrilateralPoints": {
+      "title": "Quadrilateral points",
       "description": "One or more quadrilaterals, each expressed as four successive pairs of x and y values. (The total number of points in the array must be a multiple of eight.) The points are expressed in the coordinate system of the referenced asset.",
       "type": "array",
       "minItems": 8,
@@ -136,13 +136,13 @@
             "const": "NodeSelector"
           },
           "collab:quadPoints": {
-            "title": "Quadilateral points",
-            "description": "Quadilateral points may be provided for highlights, strikethrough, underline, insert or replace annotations.",
-            "$ref" : "#/definitions/quadilateralPoints"
+            "title": "Quadrilateral points",
+            "description": "Quadrilateral points may be provided for highlights, strikethrough, underline, insert or replace annotations.",
+            "$ref" : "#/definitions/quadrilateralPoints"
           },
           "collab:boundingBox": {
             "title": "Bounding box",
-            "description": "Bounding box of the location in the 'node' (target.selector.node) of the asset (target.source) where annotation on the target resource is made. For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. ",
+            "description": "Bounding box of the location in the 'node' (target.selector.node) of the asset (target.source) where annotation on the target resource is made. For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. It may be used by apps for touch/mouse hit detection or clipping purposes.",
             "type": "array",
             "minItems": 4,
             "maxItems": 4,
@@ -151,6 +151,17 @@
               "description": "top, left, bottom, right pixel locations of the bounding box"
             }
           },
+          "collab:rect": {
+            "title": "Rectangle",
+            "description": "Rectangle is used by Insert annotation to define the caret location. In case of a replace annotation, the caret location is defined by this key. In case of a line annotation, this key defines the start and end points of the line. This location is in the 'node' (target.selector.node) of the asset (target.source) where annotation on the target resource is made. For many Adobe products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. ",
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number",
+              "description": "top, left, bottom, right pixel locations of the rect"
+            }
+          },          
           "collab:noteX": {
             "title": "X point of the location where annotation on the target resource is made",
             "description": "For many creative or web products, the origin of the coordinate space is the top left corner of the artboard, and the values of noteX and noteY are expressed in pixels. For other types of documents, the origin and units may be defined differently. The caller may optionally supply values for noteX and noteY if target.selector.subtype is equal to node.  For other subtypes, noteX and noteY must be specified.",
@@ -179,33 +190,43 @@
       "oneOf": [
         {
           "properties": {
+            "collab:offsetType": {
+              "title": "Offset type",
+              "type": "string",
+              "meta:enum": [
+                  "pixel",
+                  "percent"
+              ],
+              "default": "pixel",
+              "description": "A client could define the left/top offsets in either percentage or pixel"
+            },            
             "collab:leftOffset": {
               "title": "Left offset",
-              "description": "Offset in percentage of width of startStructElem element from its left edge. Required for sticky annotation on an image.",
+              "description": "Offset in width of startStructElem element from its left edge. Required for sticky annotation on an image.",
               "type": "number"
             },
             "collab:topOffset": {
               "title": "Top Offset",
-              "description": "Offset in percentage of height of startStructElem element from its top edge. Required for sticky annotation on an image. ",
+              "description": "Offset in height of startStructElem element from its top edge. Required for sticky annotation on an image. ",
               "type": "number"
             }
           },
-          "required": ["collab:type", "collab:startStructElem", "collab:leftOffset", "collab:topOffset"]
+          "required": ["collab:type", "collab:leftOffset", "collab:topOffset"]
         },
         {
           "properties": {
             "collab:startOffset": {
-              "title": "Unicode character offset from the startStructElem. This property helps in placing annotations over textual content.",
+              "title": "Unicode character offset from the startStructElem. This property helps in placing annotations over textual content. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to startStructElem. If startStructElem is not defined, then it is relative to the beginning of the presentation.",
               "description": "",
-              "type": "integer"
+              "type": "number"
             },
             "collab:endOffset": {
-              "title": "Unicode character offset from the endStructElem. This property helps in placing annotations over textual content.",
+              "title": "Unicode character offset from the endStructElem. This property helps in placing annotations over textual content. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to startStructElem. If startStructElem is not defined, then it is relative to the beginning of the presentation.",
               "description": "",
-              "type": "integer"
+              "type": "number"
             }
           },
-          "required": ["collab:type", "collab:startStructElem", "collab:startOffset", "collab:endOffset"]
+          "required": ["collab:type", "collab:startOffset", "collab:endOffset"]
         }
       ],
       "properties": {
@@ -215,7 +236,7 @@
         },
         "collab:startStructElem": {
           "title": "Start structure element",
-          "description": "This field points to the anchor element in the document object model of the asset from which start offset of the text annotation is calculated. This points to the id of the opaque object (could be a GUID) in the underlying resource (like an artboard in case of a creative product).",
+          "description": "This field points to the anchor element in the document object model of the asset from which start offset of the text annotation is calculated. This points to the id of the opaque object (could be a GUID) in the underlying resource (like an artboard in case of a creative product).\nIn case the annotation is made on a video or animation asset, this field may identify the keyframe. In case of a video asset, this field may not be present but is recommended. In case a user is adding a comment on a video asset and using a video editing software, adding this field should ensure better stability of the annotation across asset versions if some video segment is added before the identified keyframe.",
           "type": "string"
         },
         "collab:endStructElem": {
@@ -245,9 +266,9 @@
       "properties": {
         "collab:type": {
           "title": "Annotation Type",
-          "description": "node subtype identifies a global annotation that is made on an entire artboard, or page of a document. Such a node annotation does not need noteX, noteY properties described below.\nnote subtype is similar to a sticky note in PDF - it is a contextual annotation made at (x, y) location on an artboard or page of a document.\nstrikethrough | highlight | underline | insert subtype correspond to namesake annotation usually made against text in PDF.\nshape annotation is a free form vector drawing annotation.",
+          "description": "node subtype identifies a global annotation that is made on an entire artboard or page of a document. Such a node annotation does not need noteX, noteY properties described below.\nnote subtype is similar to a sticky note in PDF - it is a contextual annotation made at (x, y) location on an artboard or page of a document.\nstrikethrough | highlight | underline | insert | replace subtype corresponds to namesake annotation usually made against text in PDF.\nShape annotation is a free form vector drawing annotation. It is similar to ink annotation in PDF.\nLine annotation allows a user to draw a line on a node in an asset, and add textual content to the object pointed by its arrow.\nRectangle annotation is used by a user to select a rectangle or square area on a node in an asset and provide annotation on it. It is similar to a square annotation in a PDF which also can be used for rectangular annotation.\nOval annotation allows a user to select an oval/circle area on a node in an asset which she wishes to select for her annotation. It is similar to a 'circle' annotation in PDF standard which can be used to create oval shapes.",
           "type": "string",
-          "meta:enum": ["node", "note", "strikethrough", "highlight", "underline", "insert", "shape"]
+          "meta:enum": ["node", "note", "strikethrough", "highlight", "underline", "shape", "insert", "replace", "line", "rectangle", "oval"]
         },
         "collab:primarySelector": {
           "title": "Primary Selector",
@@ -263,7 +284,7 @@
     },
     "annotationStyle": {
       "title": "Annotation Selector",
-      "description": "An annotation may refer to segment of a target resource, rather than all of it. A selector is used to describe that segment in the target resource.",
+      "description": "An annotation may refer to a segment of a target resource, rather than all of it. A selector is used to describe that segment in the target resource.",
       "type": "object",
       "properties": {
         "collab:type" : {
@@ -289,6 +310,20 @@
           "minimum": 0,
           "maximum": 1,
           "default": 1
+        },
+        "collab:lineEnding": {
+          "title": "Line Ending",
+          "description": "Line ending for a line/arrow annotation",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "description": "A predefined style for the arrow (line) annotation. The first element in the array points to the start point of the line annotation. Second element in the lineEnding array points to second/end point of the line annotation",
+            "default":"noEnding",
+            "meta:enum": ["noEnding", "openArrow"]
+          },
+          "examples": ["openArrow", "openArrow"]
         }
       }
     },

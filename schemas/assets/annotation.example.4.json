@@ -40,7 +40,7 @@
   "collab:motivation": "commenting",
   "collab:body" : {
       "dc:format": "text/plain",
-      "value": "plain text comment content"
+      "value": "plain text comment content. A client agent can identify this annotation using either PositionSelector or NodeSelector"
   },
   "collab:creator": {
     "xdm:identityProvider": "ims",
