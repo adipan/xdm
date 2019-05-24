@@ -15,7 +15,7 @@
       "collab:type":"replace",
       "collab:primarySelector": [{
         "collab:type" : "NodeSelector",
-        "xdm:index":0,
+        "collab:index":0,
         "collab:boundingBox": [17.97, 405.95, 539.87, 431.15],
         "collab:quadPoints": [18.47, 430.65, 539.37, 430.65, 18.47, 418.4, 539.37, 418.4, 18.48, 418.69, 62.71, 418.69, 18.48, 406.45, 62.71, 406.45],
         "collab:rect": [510, 405.95, 530, 431.15]
@@ -33,10 +33,11 @@
       "value": "I wish to replace some content I have highlighted. Let's change it."
   },
   "collab:creator": {
+    "xdm:identityProvider": "ims",
     "xdm:id": "C0B648DE57D701277F000101@AdobeID",
     "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
-    "xdm:name":"Neeraj bagga",
-    "collab:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+    "xdm:displayName":"Neeraj bagga",
+    "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
   },
   "dc:title": "Annotation",
   "type":"object"
