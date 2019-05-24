@@ -1,0 +1,27 @@
+{
+  "collab:target": {
+    "collab:source":"https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+    "collab:selector": {
+      "collab:type":"note",
+      "collab:primarySelector": [{
+        "collab:type" : "NodeSelector",
+        "collab:index":0,
+        "collab:noteX":217.07,
+        "collab:noteY":806.7
+      }]
+    }
+  },
+  "collab:status": "open",
+  "collab:motivation": "commenting",
+  "collab:body" : {
+      "dc:format": "text/plain",
+      "value": "plain text comment content"
+  },
+  "collab:creator": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:displayName":"Neeraj bagga",
+    "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  }
+}

@@ -9,37 +9,12 @@
     "$id": "https://ns.adobe.com/xdm/assets/usertask",
     "title": "User Task",
     "meta:extensible": true,
+    "meta:extends": [
+        "https://ns.adobe.com/xdm/assets/collabproperties"
+    ],
     "description": "This model represents a user task.",
     "type": "object",
     "definitions": {
-        "collabbody": {
-            "properties": {
-                "collab:body": {
-                    "type": "object",
-                    "title": "Collaboration entity body",
-                    "description": "The content/description of this collaboration entity",
-                    "required": ["dc:format"],
-                    "properties": {
-                        "value": {
-                            "type": "string",
-                            "maxLength": 5000,
-                            "title": "Body value",
-                            "description": "The content/description of this collaboration entity",
-                            "meta:descriptors": [{
-                                "@type": "xdm:searchdescriptor",
-                                "search:indexed": true
-                            }]
-                        },
-                        "dc:format": {
-                            "type": "string",
-                            "title": "Media type",
-                            "description": "The media type of the body.",
-                            "meta:enum": ["text/plain"]
-                        }
-                    }
-                }
-            }
-        },
         "basetask": {
             "properties": {
                 "collab:subtype": {
@@ -131,35 +106,16 @@
                 }
             }
         },
-        "collabentityuser": {
-            "title": "Collaboration entity user",
-            "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
-            "properties": {
-                "xdm:id": {
-                    "title": "XDM ID",
-                    "description": "This field is merely redefined to allow search annotation on this field",
-                    "type": "string",
-                    "meta:descriptors": [{
-                        "@type": "xdm:searchdescriptor",
-                        "search:indexed": true,
-                        "search:filterable": true,
-                        "search:store": "stored",
-                        "search:sort": "sorted"
-                    }]
-                }
-            },
-            "description": "Profile details of person who created or was assigned this collaboration entity."
-        },
         "usertask": {
             "properties": {
                 "collab:creator": {
                     "title": "Creator",
-                    "$ref": "#/definitions/collabentityuser",
+                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexeduser",
                     "description": "Profile details of person who created this task."
                 },
                 "collab:assignee": {
                     "title": "Assignee",
-                    "$ref": "#/definitions/collabentityuser",
+                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexeduser",
                     "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
                 },
                 "collab:reminderDates": {
@@ -180,7 +136,7 @@
         }
     },
     "allOf": [{
-        "$ref": "#/definitions/collabbody"
+        "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/collabbody"
     }, {
         "$ref": "#/definitions/basetask"
     }, {

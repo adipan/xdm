@@ -1,0 +1,52 @@
+{
+  "collab:target": {
+    "collab:source":"https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+    "collab:selector": {
+      "collab:type":"highlight",
+      "collab:primarySelector": [{
+        "collab:type" : "NodeSelector",
+        "collab:index":0,
+        "collab:boundingBox":[
+          36.1028,
+          973.0618,
+          213.1227,
+          991.1132
+        ],
+        "collab:quadPoints":[
+          36.1028,
+          991.1132,
+          213.1227,
+          991.1132,
+          36.1028,
+          973.0618,
+          213.1227,
+          973.0618
+        ]
+      }],
+      "collab:refinedBy": {
+        "collab:type" : "PositionSelector",
+        "collab:startOffset":20,
+        "collab:endOffset": 50,
+        "collab:startStructElem":"3b21c178-4870-4bb4-9dfa-dea9655b5ec5"
+      }
+    },
+    "collab:annotationStyle": {
+      "collab:strokeColor": "#FCCB00",
+      "collab:strokeWidth": 3,
+      "collab:opacity": 0.4
+    }
+  },
+  "collab:status": "open",
+  "collab:motivation": "commenting",
+  "collab:body" : {
+      "dc:format": "text/plain",
+      "value": "plain text comment content"
+  },
+  "collab:creator": {
+    "xdm:identityProvider": "ims",
+    "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+    "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+    "xdm:displayName":"Neeraj bagga",
+    "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+  }
+}

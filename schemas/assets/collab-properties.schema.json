@@ -1,0 +1,75 @@
+{
+    "meta:license": [
+    "Copyright 2019 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+    ],
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://ns.adobe.com/xdm/assets/collabproperties",
+    "title": "User Task",
+    "meta:extensible": true,
+    "description": "This model represents reusable schemas that may be used by other schemas.",
+    "type": "object",
+    "definitions": {
+        "collabbody": {
+            "properties": {
+                "collab:body": {
+                    "type": "object",
+                    "title": "Collaboration entity body",
+                    "description": "The content/description of this collaboration entity",
+                    "required": ["dc:format"],
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "maxLength": 5000,
+                            "title": "Body value",
+                            "description": "The content/description of this collaboration entity",
+                            "meta:descriptors": [{
+                                "@type": "xdm:searchdescriptor",
+                                "search:indexed": true
+                            }]
+                        },
+                        "dc:format": {
+                            "type": "string",
+                            "title": "Media type",
+                            "description": "The media type of the body.",
+                            "meta:enum": ["text/plain"]
+                        }
+                    }
+                }
+            }
+        },
+        "indexeduser": {
+            "title": "Indexed user principal",
+            "description": "This schema is same as a user principal. It redefines properties that need to be indexed.",
+            "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
+            "properties": {
+                "xdm:id": {
+                    "title": "XDM ID",
+                    "description": "The principal's id as identified by identity provider.",
+                    "type": "string",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true
+                    }]
+                },
+                "xdm:displayName": {
+                    "title": "Name",
+                    "type": "string",
+                    "description": "Display name",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored",
+                        "search:sort": "sorted"
+                    }]
+                }                
+            }
+        }
+    },
+    "xdm:version": "1",
+    "meta:status": "experimental"
+}
