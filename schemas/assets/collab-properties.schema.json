@@ -40,9 +40,9 @@
                 }
             }
         },
-        "indexeduser": {
-            "title": "Indexed user principal",
-            "description": "This schema is same as a user principal. It redefines properties that need to be indexed.",
+        "indexedprincipal": {
+            "title": "Indexed principal",
+            "description": "This schema is same as a principal. It redefines properties that need to be indexed.",
             "required": ["xdm:identityProvider", "xdm:id", "xdm:type"],
             "properties": {
                 "xdm:id": {

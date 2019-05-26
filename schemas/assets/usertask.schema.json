@@ -110,12 +110,12 @@
             "properties": {
                 "collab:creator": {
                     "title": "Creator",
-                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexeduser",
+                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexedprincipal",
                     "description": "Profile details of person who created this task."
                 },
                 "collab:assignee": {
                     "title": "Assignee",
-                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexeduser",
+                    "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexedprincipal",
                     "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
                 },
                 "collab:reminderDates": {
