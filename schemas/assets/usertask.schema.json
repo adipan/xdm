@@ -124,6 +124,15 @@
                     "$ref": "https://ns.adobe.com/xdm/assets/collabproperties#/definitions/indexedprincipal",
                     "description": "Details of person who is assigned the task. In case assignee is not set, then collab:creator is the assignee"
                 },
+                "collab:assigneeMutableProperties": {
+                    "title": "assignee mutable properties",
+                    "description": "The task creator may whitelist specific properties that are editable by assignee. Task creator could use [\"*\"] to indicate that the assignee can modify all properties in a task.",
+                    "type": "array",
+                    "default": ["collab:status"],
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "collab:reminderDates": {
                     "type": "array",
                     "title": "Reminder dates",
