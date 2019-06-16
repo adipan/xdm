@@ -3,7 +3,6 @@
     "dc:format": "text/plain",
     "value": "please review the file and complete the task"
   },
-
   "collab:subtype": "review",
   "collab:status": "in_progress",
   "collab:priority": "high",
@@ -28,6 +27,7 @@
   "collab:resources": [
     {
       "collab:source": "https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+      "collab:name": "design mockups",
       "collab:subtype": "reference",
       "collab:immutable": true
     }

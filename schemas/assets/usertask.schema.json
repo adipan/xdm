@@ -32,7 +32,7 @@
                 "collab:status": {
                     "type": "string",
                     "description": "Status of the Task",
-                    "meta:enum": ["not_started", "in_progress", "done"],
+                    "meta:enum": ["unassigned", "not_started", "in_progress", "blocked" , "terminated", "done"],
                     "meta:descriptors": [{
                         "@type": "xdm:searchdescriptor",
                         "search:indexed": true,
@@ -44,7 +44,8 @@
                 "collab:priority": {
                     "type": "string",
                     "description": "Priority of the Task",
-                    "meta:enum": ["high", "normal", "low"]
+                    "default": "medium",
+                    "meta:enum": ["low", "medium", "high"]
                 },
                 "collab:dueDate": {
                     "type": "string",
@@ -90,6 +91,11 @@
                         "search:filterable": true,
                         "search:store": "stored"
                     }]
+                },
+                "collab:name": {
+                    "type": "string",
+                    "title": "Resource name",
+                    "description": "a name for the resource. It could be same as xdm:name for the file name or be different"
                 },
                 "collab:subtype": {
                     "title": "Sub Type",
