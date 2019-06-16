@@ -32,7 +32,7 @@
                 "collab:status": {
                     "type": "string",
                     "description": "Status of the Task",
-                    "meta:enum": ["unassigned", "not_started", "in_progress", "blocked" , "cancelled", "completed"],
+                    "meta:enum": ["unassigned", "not_started", "in_progress", "blocked" , "canceled", "completed"],
                     "meta:descriptors": [{
                         "@type": "xdm:searchdescriptor",
                         "search:indexed": true,
