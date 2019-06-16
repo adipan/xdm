@@ -1,0 +1,103 @@
+{
+  "meta:license": [
+    "Copyright 2019 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://ns.adobe.com/xdm/assets/patchentity",
+  "title": "Patch entity request",
+  "meta:extensible": true,
+  "description":
+    "This model represents a patch request that can be used to update various entities that are part of one container via a single API request",
+  "type": "object",
+  "definitions": {
+    "requests": {
+      "properties": {
+        "entity:requests": {
+          "type": "array",
+          "title": "request array",
+          "description":
+            "Each item in the array is a specific request to change (PUT/POST/DELETE/PATCH) of a single entity in an entity container",
+          "items": {
+            "$ref": "#/definitions/resourceItem"
+          }
+        }
+      }
+    },
+    "responses": {
+      "properties": {
+        "entity:responses": {
+          "type": "array",
+          "title": "response array",
+          "description":
+            "Each item in the array is a specific response to change (PUT/POST/DELETE/PATCH) of a single entity in an entity container",
+          "items": {
+            "$ref": "#/definitions/resourceItem"
+          }
+        }
+      }
+    },
+    "resourceItem": {
+      "required": ["entity:url", "entity:id", "entity:method"],
+      "properties": {
+        "entity:url": {
+          "title": "Request URL",
+          "description":
+            "This field represents the id-based URI for a platform resource that is referenced as part of this request.\nIn case of a POST request, this URI represents the parent entity container.\nIn case of PUT/PATCH/DELETE request, this URI represents the target entity against which request is issued.",
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://platform-cs.adobe.io/annot/repository123/urn:aaid:as:8a7f5370-9215-495d-8850-3b191ad6a37f"
+          ]
+        },
+        "entity:id": {
+          "type": "string",
+          "title": "Request ID",
+          "description":
+            "The identifier of current request. The corresponding response resource would also have the same ID. This field helps ensure that if the service runs all items in requests array in a parallel fashion and sends back items in the responses array in the order in which requests complete, then the client agent can correlate a request to its corresponding response"
+        },
+        "entity:method": {
+          "title": "HTTP method",
+          "description": "HTTP method for this specific request.",
+          "meta:enum": ["POST", "PUT", "PATCH", "DELETE"]
+        },
+        "entity:status": {
+          "title": "HTTP status",
+          "type": "string",
+          "description": "HTTP status for this specific request. It is only present in a response item"
+        },
+        "entity:headers": {
+          "title": "HTTP headers",
+          "type": "object",
+          "description":
+            "This field describes the HTTP headers that are sent as part of this specific request or response.\nIn case of a POST request, the corresponding response item would have a Location header containing the URL of the newly created resource.\nIn case of a PUT/PATCH/DELETE request, the If-Match header in the request is mandatory. It can be \"*\" if the client agent wishes to overwrite/execute request in all cases."
+        },
+        "entity:body": {
+          "title": "request body",
+          "anyOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "array"
+            }
+          ],
+          "description":
+            "This field describes the request body.\nIn case of a POST/PUT request, the request body is the body of the entity.\nIn case of a PATCH method request, the request body should be in form of JSON PATCH request (https://tools.ietf.org/html/rfc6902) which is of array type.\nIn case of a DELETE request, the request body need not be sent."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/definitions/requests"
+    },
+    {
+      "$ref": "#/definitions/responses"
+    }
+  ],
+  "xdm:version": "1",
+  "meta:status": "experimental"
+}

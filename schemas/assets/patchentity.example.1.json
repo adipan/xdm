@@ -1,0 +1,81 @@
+{
+    "entity:requests": [{
+        "entity:url": "https://platform-cs.adobe.io/annots/urn:aaid:as:8a7f5370-9215-495d-8850-3b191ad6a37f/",
+        "entity:id": "1",
+        "entity:method": "POST",
+        "entity:headers": {},
+        "entity:body": {
+            "collab:target": {
+                "collab:source": "https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:as:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+                "collab:selector": {
+                    "collab:type": "note",
+                    "collab:primarySelector": [{
+                        "collab:type": "NodeSelector",
+                        "collab:index": 0,
+                        "collab:noteX": 217.07,
+                        "collab:noteY": 806.7
+                    }]
+                }
+            },
+            "collab:status": "open",
+            "collab:motivation": "commenting",
+            "collab:body": {
+                "dc:format": "text/plain",
+                "value": "plain text comment content"
+            }
+        }
+    }, {
+        "entity:url": "https://platform-cs.adobe.io/annot/urn:aaid:as:5454f42f-cbe3-4f17-bdee-04896c2ceb0e",
+        "entity:id": "2",
+        "entity:method": "DELETE",
+        "entity:headers": {
+            "If-Match": "a05908de8162749bdb7c03efae5d7b954115b278c02c1c697f466d43"
+        }
+    }, {
+        "entity:url": "https://platform-cs.adobe.io/annot/urn:aaid:as:1c9201f2-12a4-4938-b6eb-dc4dc69ed0ea",
+        "entity:id": "3",
+        "entity:method": "PUT",
+        "entity:headers": {
+            "If-Match": "dfc4033344465cb76fb9aab2f396ce91f16d6a4b7dcc38dd774b4a4e"
+        },
+        "entity:body": {
+            "collab:target": {
+                "collab:source": "https://platform-cs.adobe.io/file/repoid123/id/urn:aaid:as:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2",
+                "collab:selector": {
+                    "collab:type": "note",
+                    "collab:primarySelector": [{
+                        "collab:type": "NodeSelector",
+                        "collab:index": 0,
+                        "collab:noteX": 217.07,
+                        "collab:noteY": 806.7
+                    }]
+                }
+            },
+            "collab:status": "open",
+            "collab:motivation": "commenting",
+            "collab:body": {
+                "dc:format": "text/plain",
+                "value": "plain text updated comment content"
+            },
+            "collab:creator": {
+                "xdm:identityProvider": "ims",
+                "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+                "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+                "xdm:displayName": "Neeraj bagga",
+                "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+            }
+        }
+    }, {
+        "entity:url": "https://platform-cs.adobe.io/annot/urn:aaid:as:2e5601f2-12a4-3238-b6eb-dc4dc69ed0dc",
+        "entity:id": "4",
+        "entity:method": "PATCH",
+        "entity:headers": {
+            "If-Match": "dfc4033344465cb76fb9aab2f396ce91f16d6a4b7dcc38dd774b4b3d"
+        },
+        "entity:body": [{
+            "op": "replace",
+            "path": "/collab:status",
+            "value": "resolved"
+        }]
+    }]
+}
