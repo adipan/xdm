@@ -32,7 +32,7 @@
                 "collab:status": {
                     "type": "string",
                     "description": "Status of the Task",
-                    "meta:enum": ["unassigned", "not_started", "in_progress", "blocked" , "terminated", "done"],
+                    "meta:enum": ["unassigned", "not_started", "in_progress", "blocked" , "cancelled", "completed"],
                     "meta:descriptors": [{
                         "@type": "xdm:searchdescriptor",
                         "search:indexed": true,
@@ -47,23 +47,22 @@
                     "default": "medium",
                     "meta:enum": ["low", "medium", "high"]
                 },
-                "collab:dueDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "The date and time in which the task has to be completed.",
-                    "meta:descriptors": [{
-                        "@type": "xdm:searchdescriptor",
-                        "search:indexed": true,
-                        "search:store": "stored",
-                        "search:sort": "sorted"
-                    }]
-                },
                 "collab:percentComplete": {
                     "title": "Percent complete",
                     "type": "number",
                     "minimum": 0,
                     "maximum": 1,
                     "description": "Percentage of task completed."
+                },
+                "collab:startDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time in which the task was started."
+                },
+                "collab:endDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time in which the task was completed."
                 },
                 "collab:resources": {
                     "title": "Resources",
@@ -133,6 +132,24 @@
                         "type": "string"
                     }
                 },
+                "collab:parentTask": {
+                    "title": "parentTask",
+                    "description": "If the current task is a subtask, then this field represents the id-based URI for the parent task. If this task is not a subtask, then this field is not present",
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://platform-cs.adobe.io/task/repoid123/id/urn:aaid:cs:6c21c178-4870-4bb4-9dfa-bcf9655b5eb2"]
+                },
+                "collab:dueDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "The date and time in which the task has to be completed.",
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:store": "stored",
+                        "search:sort": "sorted"
+                    }]
+                },                
                 "collab:reminderDates": {
                     "type": "array",
                     "title": "Reminder dates",
