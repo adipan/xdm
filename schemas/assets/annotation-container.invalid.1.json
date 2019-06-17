@@ -1,0 +1,37 @@
+{
+  "_links": {
+    "http://ns.adobe.com/adobecloud/rel/create": {
+      "href": "https://api.example.com/v2/create{+path}",
+      "templated": true
+    }
+  },
+  "repo:createDate": "2017-09-26T15:52:25+00:00",
+  "repo:modifyDate": "2017-09-26T15:52:25+00:00",
+  "repo:name": ":acp:annotations",
+  "repo:etag": "15",
+  "dc:format": "application/vnd.adobe.annotations+json",
+  "children": [{
+    "collab:target": {
+      "collab:source":1,
+      "collab:selector": {
+        "collab:type":"note",
+        "collab:primarySelector": [{
+          "collab:type" : "NodeSelector",
+          "collab:index":0,
+          "collab:noteX":217.07,
+          "collab:noteY":806.7
+        }]
+      }
+    },
+    "collab:status": "open",
+    "collab:motivation": "commenting",
+    "collab:body" : "plain comment without a JSON wrapper object",
+    "collab:creator": {
+      "xdm:identityProvider": "ims",
+      "xdm:id": "C0B648DE57D701277F000101@AdobeID",
+      "xdm:type": "https://ns.adobe.com/adobecloudplatform/ims/user",
+      "xdm:displayName":"Neeraj bagga",
+      "xdm:profileImage": "https://na1r-stg1.services.adobe.com/account/UserImage/?g=1416008B47D90B9D9920FAAF"
+    }
+  }]
+}
