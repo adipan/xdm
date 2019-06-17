@@ -16,6 +16,20 @@
         "https://ns.adobe.com/xdm/external/hal/resource#/definitions/hal"
     ],
     "definitions": {
+        "primaryEmbeddedObject": {
+            "properties": {
+                "http://ns.adobe.com/adobecloud/rel/primary": {
+                    "$ref": "https://ns.adobe.com/xdm/assets/annotation"
+                }
+            }
+        },
+        "embeddedObject": {
+            "properties": {
+                "_embedded": {
+                    "$ref": "#/definitions/primaryEmbeddedObject"
+                }
+            }
+        },
         "container": {
             "properties": {
                 "dc:format": {
@@ -30,9 +44,11 @@
                 "children": {
                     "type": "array",
                     "items": {
-                        "oneOf": [
+                        "allOf": [
                             {
-                                "$ref": "https://ns.adobe.com/xdm/assets/annotation"
+                                "$ref": "http://ns.adobe.com/adobecloud/core/1.0/asset"
+                            }, {
+                                "$ref": "#/definitions/embeddedObject"
                             }
                         ]
                     }
