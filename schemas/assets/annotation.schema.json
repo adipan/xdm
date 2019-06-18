@@ -216,17 +216,17 @@
         {
           "properties": {
             "collab:startOffset": {
-              "title": "Unicode character offset from the startStructElem. This property helps in placing annotations over textual content. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to startStructElem. If startStructElem is not defined, then it is relative to the beginning of the presentation.",
-              "description": "",
+              "title": "Start Offset",
+              "description": "In case an annotation is made over textual content, this property represents Unicode character offset from the startStructElem. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to startStructElem. If startStructElem is not defined, then it is relative to the beginning of the presentation.",
               "type": "number"
             },
             "collab:endOffset": {
-              "title": "Unicode character offset from the endStructElem. This property helps in placing annotations over textual content. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to startStructElem. If startStructElem is not defined, then it is relative to the beginning of the presentation.",
-              "description": "",
+              "title": "End Offset",
+              "description": "In case an annotation is made over textual content, this property represents Unicode character offset from the collab:endStructElem. In case of an annotation made over a video or animation asset, this represents stream absolute position in seconds relative to endStructElem. If endStructElem is not defined, then it is relative to startStructElem (if it is defined). If startStructElem is not defined, then it is relative to the beginning of the presentation. The annotation is assumed to cover the entire element from collab:startOffset of collab:startStructElem to collab:endOffset of collab:endStructElem",
               "type": "number"
             }
           },
-          "required": ["collab:type", "collab:startOffset", "collab:endOffset"]
+          "required": ["collab:type", "collab:startOffset"]
         }
       ],
       "properties": {
@@ -324,6 +324,18 @@
             "meta:enum": ["noEnding", "openArrow"]
           },
           "examples": ["openArrow", "openArrow"]
+        },
+        "collab:appearance": {
+          "title": "Appearance element",
+          "description": "An annotation appearance element may be pre-defined elsewhere in the asset, be reused across various annotations of the same type, or be set by the authoring application on its own. This field helps point to the pre-defined appearance element.",
+          "type": "object",
+          "properties": {
+            "collab:id": {
+              "title": "ID",
+              "type": "string",
+              "description": "This field indicates the element that defines the appearance for an annotation."
+            }
+          }
         }
       }
     },
