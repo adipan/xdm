@@ -7,7 +7,7 @@
   "collab:status": "completed",
   "collab:startDate": "2019-04-28T13:01:33Z",
   "collab:endDate": "2019-07-29T13:01:33Z",
-  "collab:priority": "high",
+  "collab:priority": 1,
   "collab:parentTask": "https://platform-cs.adobe.io/task/repoid123/id/urn:aaid:cs:5a21c178-4870-4bb4-9dfa-bcf9655b5cd2",
   "collab:creator": {
     "xdm:identityProvider": "ims",

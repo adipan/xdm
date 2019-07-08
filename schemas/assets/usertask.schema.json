@@ -41,11 +41,28 @@
                         "search:sort": "sortedCaseSensitive"
                     }]
                 },
-                "collab:priority": {
+                "collab:subStatus": {
                     "type": "string",
-                    "description": "Priority of the Task",
-                    "default": "medium",
-                    "meta:enum": ["low", "medium", "high"]
+                    "description": "Sub-Status of a Task. When a user completes a task, she may wish to optionally record additional details",
+                    "meta:enum": ["accepted", "rejected"],
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true,
+                        "search:store": "stored",
+                        "search:sort": "sortedCaseSensitive"
+                    }]
+                },
+                "collab:priority": {
+                    "type": "number",
+                    "description": "Priority of the Task. Higher value implies higher priority",
+                    "default": 0,
+                    "minimum": 0,
+                    "meta:descriptors": [{
+                        "@type": "xdm:searchdescriptor",
+                        "search:indexed": true,
+                        "search:filterable": true
+                    }]
                 },
                 "collab:percentComplete": {
                     "title": "Percent complete",

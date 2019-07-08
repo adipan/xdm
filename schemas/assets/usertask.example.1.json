@@ -5,7 +5,7 @@
   },
   "collab:subtype": "review",
   "collab:status": "in_progress",
-  "collab:priority": "high",
+  "collab:priority": 2,
   "collab:creator": {
     "xdm:identityProvider": "ims",
     "xdm:id": "C0B648DE57D701277F000101@AdobeID",

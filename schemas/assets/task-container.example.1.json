@@ -11,26 +11,28 @@
     "repo:etag": "15",
     "dc:format": "application/vnd.adobe.tasks+json",
     "children": [{
-        "repo:createDate": "2019-06-16T16:06:36Z",
-        "repo:etag": "1560701196924",
-        "dc:format": "application/vnd.adobe.task+json",
-        "repo:name": "76ea88b2-a3dd-41f7-9d88-c63b8876c750",
-        "repo:modifyDate": "2019-06-16T16:06:36Z",
-        "repo:version": "1",
-        "repo:path": "/hello.xd/:acp:tasks/76ea88b2-a3dd-41f7-9d88-c63b8876c750",
-        "repo:size": 200,
-        "repo:id": "urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750",
-        "_links": {
-            "http://ns.adobe.com/adobecloud/rel/metadata/repository": {
-                "templated": false,
-                "href": "https://platform-cs-va6.adobe.io/task/urn:uuid:fe65ffc9-b205-43f0-9ce9-82c6193e5d63/id/urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750/:repometadata"
-            },
-            "http://ns.adobe.com/adobecloud/rel/primary": {
-                "templated": false,
-                "href": "https://platform-cs-va6.adobe.io/task/urn:uuid:fe65ffc9-b205-43f0-9ce9-82c6193e5d63/id/urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750"
-            }
-        },
         "_embedded": {
+            "http://ns.adobe.com/adobecloud/rel/metadata/repository" :{
+                "repo:createDate": "2019-06-16T16:06:36Z",
+                "repo:etag": "1560701196924",
+                "dc:format": "application/vnd.adobe.task+json",
+                "repo:name": "76ea88b2-a3dd-41f7-9d88-c63b8876c750",
+                "repo:modifyDate": "2019-06-16T16:06:36Z",
+                "repo:version": "1",
+                "repo:path": "/hello.xd/:acp:tasks/76ea88b2-a3dd-41f7-9d88-c63b8876c750",
+                "repo:size": 200,
+                "repo:id": "urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750",
+                "_links": {
+                    "http://ns.adobe.com/adobecloud/rel/metadata/repository": {
+                        "templated": false,
+                        "href": "https://platform-cs-va6.adobe.io/task/urn:uuid:fe65ffc9-b205-43f0-9ce9-82c6193e5d63/id/urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750/:repometadata"
+                    },
+                    "http://ns.adobe.com/adobecloud/rel/primary": {
+                        "templated": false,
+                        "href": "https://platform-cs-va6.adobe.io/task/urn:uuid:fe65ffc9-b205-43f0-9ce9-82c6193e5d63/id/urn:aaid:as:76ea88b2-a3dd-41f7-9d88-c63b8876c750"
+                    }
+                }                
+            },
             "http://ns.adobe.com/adobecloud/rel/primary": {
                 "collab:body": {
                     "dc:format": "text/plain",
@@ -38,7 +40,7 @@
                 },
                 "collab:subtype": "review",
                 "collab:status": "in_progress",
-                "collab:priority": "high",
+                "collab:priority": 0,
                 "collab:creator": {
                     "xdm:identityProvider": "ims",
                     "xdm:id": "C0B648DE57D701277F000101@AdobeID",
